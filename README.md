@@ -8,25 +8,27 @@
 #include <string>
 
 using namespace std;
-Class critter { 
-Public:
-Critter(int hung);
-Void enter() ;
-Private:
-Int* m_hunger;
+class Critter {
+public:
+    Critter(int hung);
+    void enter();
+private:
+    int* m_hunger;
+};
+Critter::Critter(int hung) {
+    m_hunger = new int(hung);
 }
-Critter::Critter(int hung){
-m_hunger = new int(hung);
+void Critter::enter() {
+    cout << "my hunger is: " << *m_hunger << endl;
 } 
-Void critter::enter() {
-Cout << "my hunger is: " << *m_hunger << endl; 
 
 
 int main()
 {
+    setlocale(LC_ALL, "ru");
     
     Critter* crit1 = new Critter(4);
-    Crit1.enter()
+    crit1->enter();
 
     return 0;
 }
